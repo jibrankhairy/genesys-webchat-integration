@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebChat Genesys</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <script>
+    window._genesys = {
+      widgets: {
+        webchat: {
+          transport: {
+            type: "purecloud-v2-sockets",
+            dataURL: "https://api.mypurecloud.jp",
+            deploymentKey: "ce6d7aa5-1421-410f-ad97-16700aad7c3b",
+            orgGuid: "94689a3f-2f13-4209-9dc8-a929b1b30357",
+            interactionData: {
+              routing: {
+                targetType: "QUEUE",
+                targetAddress: "Support-(Jibran)",
+                priority: 2,
+              },
+            },
+          },
+          userData: {
+            addressStreet: "",
+            addressCity: "",
+            addressState: "",
+            addressPostalCode: "",
+            phoneNumber: "",
+            customField1Label: "",
+            customField1: "",
+            customField2Label: "",
+            customField2: "",
+            customField3Label: "",
+            customField3: "",
+          },
+        },
+      },
+    };
+  </script>
+  <body>
+    <button
+      class="advanced"
+      type="button"
+      id="chat-button"
+      onclick="customPlugin.command('WebChat.open', getAdvancedConfig());"
+    >
+      Start Chat
+    </button>
+    <script src="script/index.js"></script>
+  </body>
+</html>
